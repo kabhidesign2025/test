@@ -8,6 +8,7 @@ import HomePage from "./components/HomePage";
 import Login from "./components/Auth/Login";
 import RegisterSchool from "./components/Auth/RegisterSchool";
 import StudentRegister from "./components/Student/StudentRegister";
+import HomeLogin from "./components/HomeLogin"; // Add this import
 
 // Admin Components
 import AdminDashboard from "./components/Admin/AdminDashboard";
@@ -160,6 +161,7 @@ function App() {
             <Route path="/login" element={<Login darkMode={darkMode} onThemeToggle={handleThemeToggle} />} />
             <Route path="/register-school" element={<RegisterSchool darkMode={darkMode} onThemeToggle={handleThemeToggle} />} />
             <Route path="/student-register" element={<StudentRegister darkMode={darkMode} onThemeToggle={handleThemeToggle} />} />
+            <Route path="/homelogin" element={<HomeLogin />} /> {/* Add this line */}
 
             {/* Admin Routes */}
             <Route
