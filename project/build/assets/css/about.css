@@ -1,0 +1,222 @@
+.about-hero-section {
+  background-image: url('../images/about/about-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.about-hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 42, 0.85);
+  z-index: -1;
+}
+
+.about-hero-title {
+  font-family: 'Marcellus', serif;
+  font-size: 3.2rem;
+}
+
+.about-hero-subtitle {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-grid-img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.highlight-box {
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.15);
+  transition: all 0.3s ease;
+}
+
+.highlight-box:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.highlight-text {
+  font-size: 1.4rem;
+  font-family: 'Marcellus', serif;
+  color: #ffc107;
+}
+
+.highlight-label {
+  font-size: 0.95rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #f1f1f1;
+}
+
+
+.taf-about-section {
+  background-color: #0d1b2a;
+}
+
+.section-line {
+  width: 60px;
+  height: 4px;
+  background-color: #ffc107;
+  border-radius: 2px;
+}
+
+.founder-card {
+  transition: transform 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-5px);
+}
+
+.founder-img {
+  border: 3px solid #ffc107;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.taf-award-section-bg {
+  background-image: url('../images/header/background.png'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.award-overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 27, 42, 0.85); /* Dark overlay for text readability */
+  z-index: 0;
+}
+
+.taf-award-section-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+.taf-timeline-section {
+  background-color: #0d1b2a;
+  position: relative;
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 2rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 4px;
+  height: 100%;
+  background-color: #ffc107;
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 30px;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 6px;
+  left: -4px;
+  width: 14px;
+  height: 14px;
+  background-color: #ffc107;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-content {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.25rem;
+  border-left: 3px solid #ffc107;
+  border-radius: 5px;
+}
+
+
+.taf-mission-vision-cards {
+  background-color: #0d1b2a;
+}
+
+.section-line {
+  width: 60px;
+  height: 4px;
+  background-color: #ffc107;
+  border-radius: 2px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+
+
+
+.taf-partner-logos {
+  background-color: #f8f9fa;
+}
+
+.logo-marquee-wrapper {
+  white-space: nowrap;
+}
+
+.logo-marquee {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-item img {
+  max-height: 70px;
+  width: auto;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Scroll animations */
+.scroll-left {
+  animation: scroll-left 4s linear infinite;
+}
+
+.scroll-right {
+  animation: scroll-right 6s linear infinite;
+}
+
+.slow {
+  animation-duration: 6s;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}

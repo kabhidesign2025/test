@@ -1,0 +1,15 @@
+.competition-header-section {
+  background-image: url('assets/images/competitions/competition-banner.jpg'); /* Replace with real image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.competition-header-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 27, 42, 0.85);
+  z-index: -1;
+}

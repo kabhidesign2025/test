@@ -1,0 +1,395 @@
+/* ===================================== */
+/* ========== GLOBAL COLORS ============ */
+/* ===================================== */
+:root {
+  --primary-dark: #0d1b2a;
+  --dropdown-dark: #13293d;
+  --highlight: #ffc107;
+  --overlay-dark: rgba(13, 27, 42, 0.75);
+}
+
+/* ===================================== */
+/* ========== NAVBAR STYLES ============ */
+/* ===================================== */
+.bg-darkblue {
+  background-color: var(--primary-dark) !important;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #f8f9fa;
+  margin: 0 0.75rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--highlight);
+}
+
+.dropdown-menu-dark {
+  background-color: var(--dropdown-dark);
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-dark);
+  color: var(--highlight);
+}
+
+/* Dropdown opens on hover (desktop only) */
+@media (min-width: 992px) {
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* Register button */
+.btn-warning {
+  background-color: var(--highlight);
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #fff;
+}
+
+/* ===================================== */
+/* ========== HERO SECTION ============= */
+/* ===================================== */
+.bg-section {
+  background-image: url('/assets/images/header/background.png'); /* <-- Make sure this path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+.bg-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 27, 42, 0.75); /* overlay for readability */
+  z-index: -1;
+}
+
+/* Make sure the hero section fills screen height */
+.section-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;
+}
+
+/* ===================================== */
+/* ========== CAROUSEL STYLES ========== */
+/* ===================================== */
+.carousel-inner img {
+  height: 80vh;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 991.98px) {
+  .carousel-inner img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .fs-5 {
+    font-size: 1rem;
+  }
+}
+
+/* ===================================== */
+/* ========== FLOATING IMAGE =========== */
+/* ===================================== */
+.floating-img {
+  max-width: 250px;
+  max-height: 80%;
+  opacity: 1;
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 767.98px) {
+  .floating-img {
+    max-width: 200px;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+  }
+
+  .display-6 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ===================================== */
+/* ========== TAF SERVICES CARDS ======= */
+/* ===================================== */
+.bg-section-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.2);
+}
+
+.service-card .card-title {
+  color: #ffc107;
+}
+
+.service-card .card-text {
+  color: #e0e0e0;
+}
+
+.service-card .btn-outline-warning {
+  border-color: #ffc107;
+  color: #ffc107;
+  transition: 0.3s;
+}
+
+.service-card .btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #0d1b2a;
+}
+
+/* ===================================== */
+/* ========== TAF COMMUNITY FORM STYLES =========== */
+/* ===================================== */
+
+form .form-label {
+  font-weight: 500;
+}
+
+form .form-control,
+form .form-select {
+  border-radius: 8px;
+  border: none;
+  padding: 0.75rem;
+}
+
+form .form-control:focus,
+form .form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.3);
+  border-color: #ffc107;
+}
+
+form button:hover {
+  background-color: #e0a800;
+}
+
+.community-content {
+  width: 100%;
+}
+
+.gallery-img {
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
+}
+
+.about-slide {
+  animation: fadeSlide 0.8s ease;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================== */
+/* ========== about us STYLES =========== */  
+/* ===================================== */
+
+.about-content {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.about-content:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.1);
+}
+
+.about-img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: cover;
+  height: 180px;
+  width: 100%;
+}
+
+.about-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
+}
+
+@media (max-width: 768px) {
+  .about-img {
+    height: auto;
+  }
+}
+
+
+/* ===================================== */
+/* ========== founder section STYLES =========== */   
+
+/* ===================================== */
+
+.founder-img {
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.15);
+}
+
+.founder-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 15px 35px rgba(255, 193, 7, 0.35);
+}
+
+.founder-badge {
+  font-size: 0.75rem;
+  top: -12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.founder-paragraph p {
+  color: #e2e2e2;
+  line-height: 1.7;
+}
+
+#founder blockquote {
+  border-left: 4px solid #ffc107;
+  font-size: 1.1rem;
+  color: #ffc107;
+}
+
+
+/* ===================================== */
+/* ========== vision mission section STYLES =========== */
+/* ===================================== */
+
+.mission-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.15);
+}
+
+.mission-card .card-title {
+  font-size: 1.25rem;
+}
+
+.mission-card .card-text {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+/* ===================================== */
+/* ========== stats STYLES =========== */
+/* ===================================== */
+
+.stat-box {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.15);
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+
+/* ===================================== */
+/* ========== cta STYLES =========== */
+/* ===================================== */
+
+#cta a.btn:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+#cta a.btn-outline-dark:hover {
+  background-color: #0d1b2a;
+  color: #fff;
+}
+
+/* ===================================== */
+/* ========== footer STYLES =========== */  
+/* ===================================== */
+#footer a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #ffc107;
+}
+
+.btn-icon {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-icon:hover {
+  background-color: #ffc107;
+  color: #0d1b2a;
+  transform: scale(1.1);
+}
+
