@@ -9,6 +9,7 @@ import Login from "./components/Auth/Login";
 import RegisterSchool from "./components/Auth/RegisterSchool";
 import StudentRegister from "./components/Student/StudentRegister";
 import HomeLogin from "./components/HomeLogin"; // Add this import
+import ContactForm from "./components/ContactForm";
 
 // Admin Components
 import AdminDashboard from "./components/Admin/AdminDashboard";
@@ -162,6 +163,7 @@ function App() {
             <Route path="/register-school" element={<RegisterSchool darkMode={darkMode} onThemeToggle={handleThemeToggle} />} />
             <Route path="/student-register" element={<StudentRegister darkMode={darkMode} onThemeToggle={handleThemeToggle} />} />
             <Route path="/homelogin" element={<HomeLogin />} /> {/* Add this line */}
+            <Route path="/contact" element={<ContactForm />} />
 
             {/* Admin Routes */}
             <Route

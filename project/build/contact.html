@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | The ART Foundation</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/float.css">
+
+    <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1b2a; /* Professional dark blue */
+      color: #ffffff; /* White text for contrast */
+    }
+
+    a {
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffc107;
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body class="bg-darkblue text-white">
+
+    <section class="bg-section text-white position-relative section-wrapper d-flex flex-column" style="height: 100vh; overflow: hidden;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-1">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold me-4" href="#">
+        <img src="assets/images/logo/logo.png" alt="TAF Logo" width="175" class="me-2">
+      </a>
+
+      <!-- Toggler (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center Navigation -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fw-semibold">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="competitions.html">Competitions</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#">Awards</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="bata.html">Best Art Teacher</a></li>
+              <li><a class="dropdown-item" href="winners.html">Student Winners</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#">Programs</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="webinar.html">Online Webinar</a></li>
+              <li><a class="dropdown-item" href="art-classes.html">ART Classes</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Right-Aligned Register Button -->
+      <div class="d-none d-lg-block">
+        <a href="/register-school" class="btn btn-outline-warning px-4 py-2 fw-semibold">Register Your School</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="container-fluid flex-grow-1 d-flex align-items-center">
+    <div class="row w-100 justify-content-center">
+      <div class="col-lg-8 text-center px-4">
+        <h1 class="fw-bold text-warning mb-3">Contact The Art Foundation</h1>
+        <p class="fs-6 text-light mb-4">We’re happy to help with school registrations, programs, partnerships or anything related to art education.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="/register-school" class="btn btn-outline-warning px-4 py-2 fw-semibold">Register Your School</a>
+          <a href="https://wa.me/917639922228" target="_blank" class="btn btn-success px-4 py-2 fw-semibold">📲 Chat on WhatsApp</a>
+          <a href="/contact" class="btn btn-warning text-dark px-4 py-2 fw-semibold">Contact Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === General Enquiry Section === -->
+<section id="contact-form" class="py-4 bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-3">
+      <div class="col-lg-8 text-center">
+        <h2 class="fw-bold text-dark fs-3 mb-2">General Enquiry</h2>
+        <p class="text-muted fs-6 mb-3">Send us your questions or requests. We’ll get in touch shortly.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="bg-white rounded shadow-sm p-3 p-md-4">
+          <form>
+            <div class="row g-3 text-dark">
+
+              <!-- Left Col -->
+              <div class="col-md-6">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control form-control-sm" id="name" placeholder="Enter your name">
+              </div>
+
+              <div class="col-md-6">
+                <label for="school" class="form-label">School Name</label>
+                <input type="text" class="form-control form-control-sm" id="school" placeholder="Enter your school name">
+              </div>
+
+              <div class="col-md-6">
+                <label for="location" class="form-label">School Location</label>
+                <input type="text" class="form-control form-control-sm" id="location" placeholder="City / Town / District">
+              </div>
+
+              <div class="col-md-6">
+                <label for="whatsapp" class="form-label">WhatsApp Number</label>
+                <input type="text" class="form-control form-control-sm" id="whatsapp" placeholder="e.g., +91 98765 43210">
+              </div>
+
+              <div class="col-md-12">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control form-control-sm" id="message" rows="3" placeholder="Type your message here..."></textarea>
+              </div>
+
+              <div class="col-md-12">
+                <label for="calltime" class="form-label">Preferred Time for Call</label>
+                <input type="text" class="form-control form-control-sm" id="calltime" placeholder="e.g., 10 AM – 12 PM">
+              </div>
+
+              <div class="col-12 text-end">
+                <button type="submit" class="btn btn-warning fw-semibold text-dark btn-sm px-4">Submit</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- === Footer Section Start === -->
+<footer class="bg-darkblue text-white pt-5 pb-4" id="footer">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Logo + About -->
+      <div class="col-md-4">
+        <img src="assets/images/logo/logo-footer.png" alt="The ART Foundation Logo" width="150" class="mb-3">
+        <p class="small text-light">
+          The ART Foundation is dedicated to nurturing and promoting the artistic talents of young minds. Join our community and participate in our various programs to enhance your creative skills.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="btn btn-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="btn btn-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="btn btn-icon" title="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="btn btn-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Registration</a></li>
+          <li><a href="#">Student Showcase</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3">Programs</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#"><i class="bi bi-palette-fill text-warning me-2"></i>Competitions</a></li>
+          <li><a href="#"><i class="bi bi-easel-fill text-warning me-2"></i>Workshops</a></li>
+          <li><a href="#"><i class="bi bi-easel2-fill text-warning me-2"></i>Seminars</a></li>
+          <li><a href="#"><i class="bi bi-people-fill text-warning me-2"></i>Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+<div class="col-md-3">
+  <h6 class="fw-bold mb-3">Contact Info</h6>
+  <ul class="list-unstyled small">
+
+    <li class="mb-3 d-flex align-items-start">
+      <i class="bi bi-telephone-fill text-warning me-3 fs-5 mt-1"></i>
+      <div>
+        <div>+91 76399 22228 / 76399 22223</div>
+        <small>Mon – Fri 10:00 AM – 7:00 PM</small>
+      </div>
+    </li>
+
+    <li class="mb-3 d-flex align-items-start">
+      <i class="bi bi-envelope-fill text-warning me-3 fs-5 mt-1"></i>
+      <div>
+        <div>info@theartfoundation.in</div>
+        <div>ceo@theartfoundation.in</div>
+      </div>
+    </li>
+
+    <li class="d-flex align-items-start">
+      <i class="bi bi-geo-alt-fill text-warning me-3 fs-5 mt-1"></i>
+      <div>
+        India Office:<br>
+        Viveka Nagar, Namakkal,<br>
+        Tamil Nadu, India – 637409
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+
+    </div>
+
+    <!-- Divider -->
+    <hr class="border-light mt-5">
+
+    <!-- Legal Footer -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start small">
+      <p class="mb-2 mb-md-0">© 2025 The ART Foundation. All rights reserved.</p>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-white text-decoration-underline">Terms & Conditions</a>
+        <a href="#" class="text-white text-decoration-underline">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- === Footer Section End === -->
+
+<!-- Floating Contact Widget -->
+<!-- Floating Contact Widget -->
+<div class="contact-float">
+  <button class="btn btn-warning rounded-circle shadow toggle-btn" id="contactToggle">
+    <i class="bi bi-chat-dots-fill"></i>
+  </button>
+  <div class="contact-options" id="contactOptions">
+    <a href="#contact-form" class="btn btn-sm btn-light shadow">📞 Get a Call Back</a>
+    <a href="https://wa.me/917639922228" target="_blank" class="btn btn-sm btn-success shadow">💬 WhatsApp</a>
+    <a href="register.html" class="btn btn-sm btn-warning text-dark shadow">📝 Register</a>
+    <a href="#" class="btn btn-sm btn-secondary shadow">🤖 Chatbot</a>
+  </div>
+</div>
+
+
+
+
+  <!-- === Founder Section (reuse or improve) === -->
+  <!-- Add your previously created founder block -->
+
+  <!-- === Mission & Vision Section (reuse) === -->
+  <!-- Add the 2-card mission/vision block here -->
+
+  <!-- === CTA Section (optional) === -->
+  <!-- Or go straight to the footer -->
+
+  <!-- === Footer (reuse homepage footer) === -->
+  <!-- Include full footer HTML -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById('contactToggle');
+    const options = document.getElementById('contactOptions');
+
+    toggleBtn.addEventListener('click', () => {
+      options.classList.toggle('show');
+    });
+  });
+</script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

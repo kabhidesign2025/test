@@ -43,7 +43,8 @@ import {
   Container,
   useMediaQuery,
   useTheme,
-  Stack
+  Stack,
+  TablePagination
 } from '@mui/material';
 import {
   Dashboard,
@@ -76,6 +77,9 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
   const [rejectReason, setRejectReason] = useState("");
   const [newUser, setNewUser] = useState({ email: "", password: "", role: "admin" });
   const [addUserDialogOpen, setAddUserDialogOpen] = useState(false);
+  const [contactRequests, setContactRequests] = useState([]);
+  const [contactPage, setContactPage] = useState(0);
+  const [contactRowsPerPage, setContactRowsPerPage] = useState(10);
   
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -92,6 +96,7 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
   useEffect(() => {
     fetchAllData();
     fetchStudentCounts();
+    fetchContactRequests();
   }, []);
 
   const fetchAllData = async () => {
@@ -145,6 +150,19 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
   const fetchAllStudents = async () => {
     const snap = await getDocs(collection(db, "students"));
     setStudents(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+  };
+
+  const fetchContactRequests = async () => {
+    const snap = await getDocs(collection(db, "contactRequests"));
+    const requests = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    // Sort by submittedAt (newest first)
+    requests.sort((a, b) => {
+      if (!a.submittedAt || !b.submittedAt) return 0;
+      const aTime = a.submittedAt.seconds ? a.submittedAt.seconds : a.submittedAt;
+      const bTime = b.submittedAt.seconds ? b.submittedAt.seconds : b.submittedAt;
+      return bTime - aTime;
+    });
+    setContactRequests(requests);
   };
 
   const handleStatusUpdate = async (schoolId, newStatus) => {
@@ -302,7 +320,6 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
   const TabPanel = ({ children, value, index }) => (
     <div hidden={value !== index}>
       {value === index && <Box sx={{ pt: 2 }}>{children}</Box>}
-  
     </div>
   );
 
@@ -407,8 +424,8 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
         {/* Main Content */}
         <Card sx={{ borderRadius: 2 }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs 
-              value={tabValue} 
+            <Tabs
+              value={tabValue}
               onChange={(e, newValue) => setTabValue(newValue)}
               variant={isMobile ? "scrollable" : "standard"}
               scrollButtons="auto"
@@ -416,6 +433,7 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
               <Tab label="Recent Schools" />
               <Tab label="Assignment Overview" />
               <Tab label="System Users" />
+              <Tab label="Contact Requests" />
             </Tabs>
           </Box>
 
@@ -654,6 +672,82 @@ const AdminDashboard = ({ darkMode, onThemeToggle }) => {
                   </Card>
                 </Grid>
               </Grid>
+            </Box>
+          </TabPanel>
+
+          {/* Contact Requests Tab */}
+          <TabPanel value={tabValue} index={3}>
+            <Box sx={{ p: { xs: 1, sm: 2 } }}>
+              <Typography variant="h6" gutterBottom>
+                Contact Requests ({contactRequests.length})
+              </Typography>
+              <TableContainer component={Paper} elevation={0}>
+                <Table size={isMobile ? "small" : "medium"}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><strong>Name</strong></TableCell>
+                      <TableCell><strong>School</strong></TableCell>
+                      <TableCell><strong>Location</strong></TableCell>
+                      <TableCell><strong>WhatsApp</strong></TableCell>
+                      <TableCell><strong>Message</strong></TableCell>
+                      <TableCell><strong>Call Time</strong></TableCell>
+                      <TableCell><strong>Submitted At</strong></TableCell>
+                      <TableCell><strong>Actions</strong></TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {contactRequests
+                      .slice(contactPage * contactRowsPerPage, contactPage * contactRowsPerPage + contactRowsPerPage)
+                      .map(req => (
+                        <TableRow key={req.id}>
+                          <TableCell>{req.name}</TableCell>
+                          <TableCell>{req.school}</TableCell>
+                          <TableCell>{req.location}</TableCell>
+                          <TableCell>
+                            <a href={`https://wa.me/${req.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer">
+                              {req.whatsapp}
+                            </a>
+                          </TableCell>
+                          <TableCell>{req.message}</TableCell>
+                          <TableCell>{req.calltime}</TableCell>
+                          <TableCell>
+                            {req.submittedAt
+                              ? (req.submittedAt.seconds
+                                ? new Date(req.submittedAt.seconds * 1000).toLocaleString()
+                                : new Date(req.submittedAt).toLocaleString())
+                              : ""}
+                          </TableCell>
+                          <TableCell>
+                            <IconButton
+                              color="error"
+                              size="small"
+                              onClick={async () => {
+                                if (window.confirm("Delete this contact request?")) {
+                                  await deleteDoc(doc(db, "contactRequests", req.id));
+                                  fetchContactRequests();
+                                }
+                              }}
+                            >
+                              <Delete fontSize="small" />
+                            </IconButton>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                  </TableBody>
+                </Table>
+                <TablePagination
+                  component="div"
+                  count={contactRequests.length}
+                  page={contactPage}
+                  onPageChange={(e, newPage) => setContactPage(newPage)}
+                  rowsPerPage={contactRowsPerPage}
+                  onRowsPerPageChange={e => {
+                    setContactRowsPerPage(parseInt(e.target.value, 10));
+                    setContactPage(0);
+                  }}
+                  rowsPerPageOptions={[5, 10, 25]}
+                />
+              </TableContainer>
             </Box>
           </TabPanel>
         </Card>

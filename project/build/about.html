@@ -42,52 +42,65 @@
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fw-semibold">
-          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">Competitions</a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="national-level.html">National Level</a></li>
-              <li><a class="dropdown-item" href="online-competition.html">Online Competition</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">Awards</a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="bata.html">Best Art Teacher</a></li>
-              <li><a class="dropdown-item" href="winners.html">Student Winners</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">Programs</a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="webinar.html">Online Webinar</a></li>
-              <li><a class="dropdown-item" href="art-classes.html">ART Classes</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
+  <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+  <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#">Competitions</a>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item" href="national-level.html">National Level</a></li>
+      <li><a class="dropdown-item" href="online-competition.html">Online Competition</a></li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#">Awards</a>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item" href="bata.html">Best Art Teacher</a></li>
+      <li><a class="dropdown-item" href="winners.html">Student Winners</a></li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#">Programs</a>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item" href="webinar.html">Online Webinar</a></li>
+      <li><a class="dropdown-item" href="art-classes.html">ART Classes</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
       </div>
 
-      <div class="d-none d-lg-block">
-          <a type="button" class="btn btn-warning ms-auto" data-bs-toggle="modal" data-bs-target="#loginRegisterModal">Login/Register</a>
+      <!-- Navbar Button -->
+<div>
+  <button
+    type="button"
+    class="btn btn-warning ms-auto fw-bold"
+    data-bs-toggle="modal"
+    data-bs-target="#loginRegisterModal"
+    style="color: #222; background: #e1b70b; border: 2px solid #ffc107;"
+  >
+    Login/Register
+  </button>
+</div>
 
-      </div>
     </div>
   </nav>
   <!-- Modal -->
 <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm">
-    <div class="modal-content">
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title text-dark text-center" id="loginRegisterModalLabel">Welcome</span></h5>
+    <div class="modal-content" style="border-radius: 1rem; border: 3px solid #ffc107; background: #fffbe6;">
+      <div class="modal-header border-0 pb-0" style="background: transparent;">
+        <h5 class="modal-title w-100 text-center fw-bold" id="loginRegisterModalLabel" style="color: #222;">Welcome</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <button class="btn btn-outline-primary w-100 mb-2" type="button">Login</button>
-        <button class="btn btn-outline-secondary w-100" type="button">Register</button>
-<a href="/register" target="_blank" class="btn btn-warning">Register</a>
-
+        <a href="/login" class="btn w-100 mb-3 fw-semibold"
+           style="border-radius: 2rem; background: #ffc107; color: #222; border: 2px solid #ffc107;">
+          Login
+        </a>
+        <a href="/register-school" class="btn w-100 fw-semibold"
+           style="border-radius: 2rem; background: #fffbe6; color: #222; border: 2px solid #ffc107;">
+          Register School
+        </a>
       </div>
     </div>
   </div>
